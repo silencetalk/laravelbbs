@@ -17,16 +17,16 @@
 
             <div class="panel-heading">
                 <ul class="nav nav-pills">
-                    <li class="active" role="presentation"><a href="#">最后回复</a> </li>
-                    <li  role="presentation"><a href="#">最新发布</a> </li>
+                    <li class="{{ active_class( ! if_query('order', 'recent') ) }}"><a href="{{ Request::url() }}?order=default">最后回复</a></li>
+                    <li class="{{ active_class(if_query('order', 'recent')) }}"><a href="{{ Request::url() }}?order=recent">最新发布</a></li>
                 </ul>
             </div>
 
-            <div class="panel-body">
+            <<div class="panel-body">
                 {{-- 话题列表 --}}
-                @include('topics._topic_list',['topics' => $topics])
+                @include('topics._topic_list', ['topics' => $topics])
                 {{-- 分页 --}}
-                {!! $topics->appends(Request::except('page'))->render() !!}
+               <!-- {!! $topics->appends(Request::except('page'))->render() !!} -->
             </div>
         </div>
     </div>
