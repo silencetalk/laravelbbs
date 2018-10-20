@@ -84,6 +84,8 @@ return [
     'menu' => [
         '用户预权限' => [
             'users',
+            'roles',
+            'permissions',
         ],
     ],
 
