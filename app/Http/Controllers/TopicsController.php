@@ -60,21 +60,21 @@ class TopicsController extends Controller
         return view('topics.create_and_edit', compact('topic', 'categories'));
     }
 
-    public function update(TopicRequest $request, Topic $topic)
-    {
-        $this->authorize('update', $topic);
-        $topic->update($request->all());
+	public function update(TopicRequest $request, Topic $topic)
+	{
+		$this->authorize('update', $topic);
+		$topic->update($request->all());
 
-        return redirect()->to($topic->link())->with('success', '更新成功！');
-    }
+		return redirect()->to($topic->link())->with('success', '更新成功！');
+	}
 
-    public function destroy(Topic $topic)
-    {
-        $this->authorize('destroy', $topic);
-        $topic->delete();
+	public function destroy(Topic $topic)
+	{
+		$this->authorize('destroy', $topic);
+		$topic->delete();
 
-        return redirect()->route('topics.index')->with('success', '成功删除！');
-    }
+		return redirect()->route('topics.index')->with('success', '成功删除！');
+	}
 
     public function uploadImage(Request $request, ImageUploadHandler $uploader)
     {

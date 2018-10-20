@@ -12,7 +12,6 @@ $factory->define(App\Models\Topic::class, function (Faker $faker) {
     $created_at = $faker->dateTimeThisMonth($updated_at);
 
     return [
-        // 'name' => $faker->name,
         'title' => $sentence,
         'body' => $faker->text(),
         'excerpt' => $sentence,
