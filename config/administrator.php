@@ -1,6 +1,6 @@
 <?php
 
-return [
+return array(
 
     /*
      * Package URI
@@ -91,6 +91,9 @@ return [
             'categories',
             'topics',
             'replies',
+        ],
+        '站点管理' => [
+            'settings.site',
         ],
     ],
 
@@ -190,4 +193,4 @@ return [
     'locales' => [],
 
     //'custom_routes_file' => app_path('Http/routes/administrator.php'),
-];
+);
